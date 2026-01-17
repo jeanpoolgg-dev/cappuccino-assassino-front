@@ -1,14 +1,21 @@
 {
-  "name": "",
+  "name": "cappuccino-assassino",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint . --ext .js,.ts,.astro",
+    "lint:fix": "eslint . --ext .js,.ts,.astro --fix"
   },
   "dependencies": {
     "astro": "^5.16.11"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "eslint-plugin-astro": "^1.5.0",
+    "typescript-eslint": "^8.53.0"
   }
 }

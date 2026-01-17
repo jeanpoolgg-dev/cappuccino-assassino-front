@@ -9,7 +9,17 @@
     "astro": "astro",
     "lint": "eslint . --ext .js,.ts,.astro",
     "lint:fix": "eslint . --ext .js,.ts,.astro --fix",
-    "format": "prettier --write \"**/*.{js,ts,astro,json,md}\""
+    "format": "prettier --write \"**/*.{js,ts,astro,json,md}\"",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,ts,astro}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "astro": "^5.16.11"
@@ -18,6 +28,8 @@
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^1.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1",
     "typescript-eslint": "^8.53.0"

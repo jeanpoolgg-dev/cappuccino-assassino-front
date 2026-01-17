@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint . --ext .js,.ts,.astro",
-    "lint:fix": "eslint . --ext .js,.ts,.astro --fix"
+    "lint:fix": "eslint . --ext .js,.ts,.astro --fix",
+    "format": "prettier --write \"**/*.{js,ts,astro,json,md}\""
   },
   "dependencies": {
     "astro": "^5.16.11"
@@ -16,6 +17,8 @@
   "devDependencies": {
     "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.5.0",
+    "prettier": "^3.8.0",
+    "prettier-plugin-astro": "^0.14.1",
     "typescript-eslint": "^8.53.0"
   }
 }

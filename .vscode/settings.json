@@ -1,9 +1,5 @@
 {
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "astro"
-  ],
+  "eslint.validate": ["javascript", "typescript", "astro"],
   "eslint.enable": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"

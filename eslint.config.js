@@ -7,6 +7,6 @@ export default [
   {
     rules: {
       // Reglas personalizadas
-    }
-  }
+    },
+  },
 ];

@@ -1,10 +1,25 @@
 ---
 import { Image } from 'astro:assets';
+import { CategoriesSchema } from '@/types';
 import logo from '@/assets/logo-cappuccino-assassino.png';
+
+const url = `https://cappuccino-assassino.kesug.com/wp-json/wp/v2/ca_categories`;
+const response = await fetch(url, {
+  headers: {
+    'User-Agent':
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+    Accept: 'application/json',
+    Referer: 'https://cappuccino-assassino.kesug.com',
+  },
+});
+console.log(response.status, response.headers.get('content-type'));
+const json = await response.json();
+const categories = CategoriesSchema.parse(json);
+console.log(categories);
 ---
 
 <aside class="md:w-80 md:h-screen border-r border-gray-200">
   <div class="flex justify-center p-5">
-    <Image src={logo} alt="logo cappuccino assassino" class="w-24 h-auto" />
+    <Image src={logo} alt="logo de cappuccino assassino" class="w-24 h-auto" />
   </div>
 </aside>

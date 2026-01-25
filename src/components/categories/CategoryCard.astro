@@ -6,10 +6,11 @@ interface Props {
 }
 
 const { category } = Astro.props;
+const currentCategory = () => category.slug == Astro.params.category;
 ---
 
 <div
-  class={` flex items-center gap-4 p-3 border-t border-gray-200 last-of-type:border-b`}
+  class={` ${currentCategory() && 'bg-amber-400'} flex items-center gap-4 p-3 border-t border-gray-200 last-of-type:border-b hover:bg-amber-100 cursor-pointer`}
 >
   <Picture
     src={category.acf.icon}

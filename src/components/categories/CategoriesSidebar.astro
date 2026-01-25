@@ -4,15 +4,17 @@ import { CategoriesSchema } from '@/types';
 import CategoryCard from '@/components/categories/CategoryCard.astro';
 import logo from '@/assets/logo-cappuccino-assassino.png';
 
-const url = `https://cappuccino-assassino.kesug.com/wp-json/wp/v2/ca_categories`;
-const response = await fetch(url, {
-  headers: {
-    'User-Agent':
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-    Accept: 'application/json',
-    Referer: 'https://cappuccino-assassino.kesug.com',
-  },
-});
+const response = await fetch(
+  `${import.meta.env.API_URL}/wp-json/wp/v2/ca_categories`,
+  {
+    headers: {
+      'User-Agent':
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      Accept: 'application/json',
+      Referer: `${import.meta.env.API_URL}`,
+    },
+  }
+);
 console.log(response.status, response.headers.get('content-type'));
 const json = await response.json();
 const categories = CategoriesSchema.parse(json);
